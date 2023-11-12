@@ -1,5 +1,5 @@
 # Dockerizing MongoDB: Dockerfile for building MongoDB images
-# Based on ubuntu:20.04
+# Based on ubuntu:20.04 , mongoDB 5.0.22
 
 FROM       ubuntu:20.04
 MAINTAINER Docker - Konstantin Manchev
