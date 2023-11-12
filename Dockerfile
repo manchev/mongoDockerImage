@@ -17,3 +17,7 @@ EXPOSE 27017
 ## ENTRYPOINT ["/work/mongodb/bin/mongod"]
 ## CMD [ "/lib/systemd/systemd" ]
 CMD ["sleep", "5000"]
+###
+### kiko@titan-lab:/work/docker$ docker build -t umbelia .
+### docker tag umbelia kiko075/img:umbelia
+### docker push docker.io/kiko075/img:umbelia
