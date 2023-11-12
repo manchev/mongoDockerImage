@@ -3,18 +3,17 @@
 
 FROM       ubuntu:20.04
 MAINTAINER Docker - Konstantin Manchev
-
 # Installation:
-# Import MongoDB public GPG key AND create a MongoDB list file
-# Update apt-get sources AND install wget
+# Update apt-get sources AND install curl ( to fix /mongod: error while loading shared libraries: libcurl.so.4: cannot open shared object file: No such file or directory )
+RUN apt update -y && apt install -y curl 
 RUN mkdir -p /work/mongodb/bin
 RUN mkdir -p /work/mongodb/cfg
 RUN mkdir -p /work/mongodb/data
 ADD  https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu2004-5.0.22.tgz /work/mongodb/
-RUN cd /work/mongodb
-RUN tar -zxvf https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu2004-5.0.22.tgz 
+RUN tar -zxvf /work/mongodb/mongodb-linux-x86_64-ubuntu2004-5.0.22.tgz -C /work/mongodb/bin  --strip-components=2
 # Expose port #27017 from the container to the host
 EXPOSE 27017
 # Set /usr/bin/mongod as the dockerized entry-point application
-# ENTRYPOINT ["/work/mongodb/bin/mongod"]
-CMD [ "/lib/systemd/systemd" ]
+## ENTRYPOINT ["/work/mongodb/bin/mongod"]
+## CMD [ "/lib/systemd/systemd" ]
+CMD ["sleep", "5000"]
