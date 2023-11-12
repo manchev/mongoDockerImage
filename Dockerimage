@@ -8,6 +8,7 @@ MAINTAINER Docker - Konstantin Manchev
 # Import MongoDB public GPG key AND create a MongoDB list file
 # Update apt-get sources AND install wget
 RUN mkdir -p /work/mongodb/bin
+RUN mkdir -p /work/mongodb/cfg
 RUN mkdir -p /work/mongodb/data
 ADD  https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu2004-5.0.22.tgz /work/mongodb/
 RUN cd /work/mongodb
