@@ -21,3 +21,4 @@ CMD ["sleep", "5000"]
 ### kiko@titan-lab:/work/docker$ docker build -t umbelia .
 ### docker tag umbelia kiko075/img:umbelia
 ### docker push docker.io/kiko075/img:umbelia
+### docker pull kiko075/img:umbelia
