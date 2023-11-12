@@ -16,4 +16,5 @@ RUN tar -zxvf https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu2004-5
 # Expose port #27017 from the container to the host
 EXPOSE 27017
 # Set /usr/bin/mongod as the dockerized entry-point application
-ENTRYPOINT ["/work/mongodb/bin/mongod"]
+# ENTRYPOINT ["/work/mongodb/bin/mongod"]
+CMD [ "/lib/systemd/systemd" ]
